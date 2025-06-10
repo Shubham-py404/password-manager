@@ -1,0 +1,250 @@
+@import "tailwindcss";
+.back{ 
+    background-color: rgb(0, 0, 0);
+ } 
+
+ body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Or your preferred font-family */
+}
+.shadow-custom-dark-outline {
+    /* Adjust these values for your desired effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), /* Soft glow */
+                0 0 0 2px rgba(0, 0, 0, 0.6); /* More defined outline */
+}
+@layer components {
+    .mcontainer{
+        @apply  px-16 py-7 ;
+    }
+}
+
+
+@media (max-width: 767px) { /* Targeting screens smaller than Tailwind's 'md' breakpoint (768px) */
+    /* Assuming 'dashboard-main-container' is the class on your main dashboard div */
+    .Dashboard {
+        width: 95vw !important; /* Force 95% viewport width */
+        margin-left: auto !important; /* Ensure it stays centered */
+        margin-right: auto !important;
+        /* Optionally adjust height for phones if needed, e.g., allow it to be more fluid */
+        min-height: calc(100vh - 80px) !important; /* Make fluid height for phones */
+        height: auto !important; /* Ensure fixed height is removed if applied elsewhere */
+        overflow-y: auto !important; /* Ensure vertical scroll is active if content overflows */
+        padding: 1rem !important; /* Reduce padding slightly if default px-5 is too much */
+    }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+    .contact-container {
+        width: 98%; /* Even wider on very small screens */
+    }
+}
+.navbar-links {
+    display: flex; /* Assuming your links are in a flex container */
+    justify-content: space-around; /* Or space-between, gap, etc. */
+    align-items: center;
+}
+
+.navbar-item {
+    /* Styles for individual navbar items */
+    padding: 0 15px; /* Example padding */
+}
+
+/* Hide 'About Us' and 'Contact' on smaller screens */
+@media (max-width: 768px) { /* Adjust this breakpoint as needed (e.g., 640px for Tailwind's 'sm') */
+    .navbar-item-about,
+    .navbar-item-contact,
+    .navbar-item-logo { /* Assuming these are specific classes for these links */
+        display: none;
+    }
+
+    /* Optional: Adjust spacing for remaining items if needed */
+    .navbar-links {
+        justify-content: space-around; /* Spread out the remaining items */
+    }
+}
+
+body {
+  background-color: #000000; /* Your neutral-950 color */
+  background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+    height: 100vh; 
+    width: 100%;
+      overflow-x: hidden;
+
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+
+::-webkit-scrollbar {
+  width: 8px; /* Make it thin */
+  height: 8px; /* Also define height for horizontal scrollbars if they appear */
+}
+
+/* This targets the scrollbar track (the background) */
+::-webkit-scrollbar-track {
+  background: #2c2c2c; /* Dark gray/blackish background */
+  border-radius: 10px; /* Optional: Rounded corners for the track */
+}
+
+/* This targets the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #000000; /* Black for the thumb */
+  border-radius: 10px; /* Optional: Rounded corners for the thumb */
+  border: 2px solid #2c2c2c; /* Optional: A small border to blend with the track */
+}
+
+/* On hover, make the thumb slightly lighter (optional) */
+::-webkit-scrollbar-thumb:hover {
+  background: #333333; /* Slightly lighter black on hover */
+}
+
+
+    .url-cell .url-link {
+        /* Ensure these styles are active only when needed, or default as a base style */
+        display: block !important;
+        max-width: 200px !important; /* Adjust max-width as needed for truncation on phones */
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+
+
+
+
+/* --- Table Responsiveness: Hiding Desktop Table and Showing Mobile Cards --- */
+
+/* By default, show desktop table and hide mobile cards */
+.desktop-table-wrapper {
+    display: block;
+}
+
+.mobile-password-cards {
+    display: none;
+}
+
+/* Media query for screens less than 768px (common mobile breakpoint) */
+@media (max-width: 767px) {
+    .desktop-table-wrapper {
+        display: none !important; /* Force hide the desktop table on phones */
+    }
+
+    .mobile-password-cards {
+        display: flex !important; /* Force show mobile cards on phones */
+        flex-direction: column;
+        gap: 1rem; /* Space between cards */
+        padding-top: 1rem; /* Padding above the first card */
+    }
+
+    /* Individual password card styles */
+    .password-card {
+        background-color: #1e1e1e; /* Dark background for phone cards */
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for cards */
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Header section within each card (for Site and link icon) */
+    .password-card-header {
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #333;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between; /* To place site and its icon */
+        align-items: center;
+    }
+
+    /* Individual data rows within each card */
+    .password-card-item {
+        display: flex;
+        align-items: center; /* Align label and value vertically */
+        gap: 0.5rem;
+        padding: 0.25rem 0;
+    }
+
+    /* Labels for each item (Username, Password) */
+    .password-card-label {
+        font-weight: bold;
+        min-width: 80px; /* Give labels a consistent width for alignment */
+    }
+
+    /* Value container for each item (username, password) */
+    .password-card-value {
+        flex-grow: 1; /* Allow value to take remaining space */
+        display: flex; /* For copy icons etc. */
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Adjust Lordicon size for mobile cards if necessary */
+    .password-card .lord-icon-link {
+        width: 20px;
+        height: 20px;
+    }
+    .password-card .copy-icon { /* Adjust if you use Lordicons for copy as well */
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Action buttons container within cards */
+    .password-card-actions {
+        display: flex;
+        justify-content: flex-end; /* Align action buttons to the right */
+        gap: 0.75rem;
+        margin-top: 1rem;
+        border-top: 1px solid #333;
+        padding-top: 0.75rem;
+    }
+
+    /* Styling for buttons within cards (to ensure they are just icons) */
+    .password-card .action-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        color: inherit; /* Inherit text color from parent */
+    }
+    /* Hide the text labels for buttons on mobile, only show icons */
+    .password-card .action-button span {
+        display: none;
+    }
+}
+
+
+/* --- URL and Username/Password Text Truncation (Applies to both desktop table and mobile cards) --- */
+/* This will now apply to the <span> wrapping the text for Site, Username, and Password */
+.url-text-display {
+    max-width: 180px; /* Adjust this value as needed based on how much text you want visible */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." */
+    white-space: nowrap; /* Keeps text on a single line */
+    display: block; /* Important for max-width and overflow to work */
+}
+
+/* For the copy SVG icons (if you use this SVG for copy) */
+.copy-svg-icon {
+    width: 16px;
+    height: 16px;
+    color: #ffffff; /* Default color */
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
