@@ -174,8 +174,7 @@ const handlechange= (e) => {
         <p className="text-white font-semibold">All your keys at one place</p>
       </div>
 
-     <div className="Dashboard  text-white mcontainer mx-auto shadow-2xl px-5
-                 lg:w-6/10 h-[565px] rounded-2xl bg-[#151515]
+     <div className="Dashboard  text-white mcontainer mx-auto shadow-2xl px-4 pt-3                lg:w-6/10 h-[565px] rounded-2xl bg-[#151515]
                  max-[670px]:w-7/10">
         <div className="flex flex-col gap-4   " >
           <input
@@ -235,7 +234,7 @@ const handlechange= (e) => {
 {passwordarray.length === 0 && <div className="text-center text-gray-500 py-4">No passwords to display. Add one!</div>}
 
 <div className="desktop-table-wrapper"> 
-    <div className="relative sm:rounded-lg shadow-xl shadow-gray-900 overflow-y-auto max-h-[350px]">
+    <div className="relative sm:rounded-lg shadow-xl shadow-gray-900 overflow-y-auto max-h-[365px]">
         {passwordarray.length !== 0 && (
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-300">
                 <thead className="text-xs text-gray-300 uppercase bg-green-700 dark:bg-[#1e1e1e] dark:text-grey-400">
@@ -249,7 +248,7 @@ const handlechange= (e) => {
                 <tbody>
                     {passwordarray.map((item) => (
                         <tr key={item.id} className="bg-white border-b dark:bg-[#1e1e1e] dark:border-gray-700 border-black-200">
-                            <th scope="row" className="px-4 py-4 font-medium text-white whitespace-nowrap dark:text-white">
+                            <th scope="row" className="px-4 py-3 font-medium text-white whitespace-nowrap dark:text-white">
                                 <div className="flex gap-2 text-white items-center">
                                     <span className="url-text-display">{item.site}</span> 
                                     <a href={item.site} target="_blank" rel="noopener noreferrer">
