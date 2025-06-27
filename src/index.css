@@ -14,28 +14,20 @@ html {
     font-family: sans-serif; /* Or your preferred font-family */
 }
 .shadow-custom-dark-outline {
-    /* Adjust these values for your desired effect */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), /* Soft glow */
-                0 0 0 2px rgba(0, 0, 0, 0.6); /* More defined outline */
-}
-@layer components {
-    .mcontainer{
-        @apply  px-16 py-7 ;
-    }
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8),
+                0 0 0 2px rgba(0, 0, 0, 0.6); 
 }
 
 
-@media (max-width: 767px) { /* Targeting screens smaller than Tailwind's 'md' breakpoint (768px) */
-    /* Assuming 'dashboard-main-container' is the class on your main dashboard div */
+@media (max-width: 767px) { 
     .Dashboard {
-        width: 95vw !important; /* Force 95% viewport width */
-        margin-left: auto !important; /* Ensure it stays centered */
+        width: 95vw !important; 
+        margin-left: auto !important; 
         margin-right: auto !important;
-        /* Optionally adjust height for phones if needed, e.g., allow it to be more fluid */
-        min-height: calc(100vh - 80px) !important; /* Make fluid height for phones */
-        height: auto !important; /* Ensure fixed height is removed if applied elsewhere */
-        overflow-y: auto !important; /* Ensure vertical scroll is active if content overflows */
-        padding: 1rem !important; /* Reduce padding slightly if default px-5 is too much */
+        min-height: calc(100vh - 80px) !important; 
+        height: auto !important; 
+        overflow-y: auto !important; 
+        padding: 1rem !important; 
     }
 }
 
