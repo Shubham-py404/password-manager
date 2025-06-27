@@ -3,6 +3,10 @@
     background-color: rgb(0, 0, 0);
  } 
 
+html {
+  scroll-behavior:var(--tw-scroll-behavior, smooth);
+}
+
  body {
     overflow-x: hidden;
     margin: 0;

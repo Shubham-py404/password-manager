@@ -1,5 +1,8 @@
 import React from "react";
 import { Outlet, Link , NavLink} from "react-router-dom";
+import footer from "./footer";
+
+
 
 const navbar = () => {
 
@@ -17,11 +20,11 @@ const navbar = () => {
         <ul className=" navbar-links text-white flex gap-13 font-bold *:text-xl *:hover:text-green-500 *:transition-all *:duration-300">
          <li className="navbar-item-home"> <a href="/">Home</a></li>       
           <li className="navbar-item"> <Link to="/contact">Contact Us</Link> </li>
-          <li className="navbar-item-about"> <Link to="/about">About Us</Link> </li>
+          <li className="navbar-item-about "> <a href="#footer">About Us</a> </li>
         </ul>
       </div>
       <div className=" p-1 mr-3 ">
-        <a href="https://github.com/Shubham-py404" target="_blank">
+        <a href="https://github.com/Shubham-py404/password-manager" target="_blank">
           <svg
             height="32"
             aria-hidden="true"

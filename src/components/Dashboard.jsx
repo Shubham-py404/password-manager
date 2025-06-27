@@ -3,6 +3,7 @@ import { useRef , useEffect } from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import {v4 as uuidv4} from 'uuid';
+import footer from "./footer";
 
 
 
@@ -250,7 +251,7 @@ const handlechange= (e) => {
                         <tr key={item.id} className="bg-white border-b dark:bg-[#1e1e1e] dark:border-gray-700 border-black-200">
                             <th scope="row" className="px-4 py-4 font-medium text-white whitespace-nowrap dark:text-white">
                                 <div className="flex gap-2 text-white items-center">
-                                    <span className="url-text-display">{item.site}</span> {/* ADD THIS CLASS */}
+                                    <span className="url-text-display">{item.site}</span> 
                                     <a href={item.site} target="_blank" rel="noopener noreferrer">
                                         <lord-icon
                                             src="https://cdn.lordicon.com/gsjfryhc.json"
@@ -264,7 +265,7 @@ const handlechange= (e) => {
                             </th>
                             <td className="px-5 py-4 text-white">
                                 <div className="flex items-center gap-3 cursor-pointer" onClick={() => copyText(item.username)}>
-                                    <span className="url-text-display">{item.username}</span> {/* ADD THIS CLASS */}
+                                    <span className="url-text-display">{item.username}</span> 
                                     <svg className="copy-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#ffffff" fill="none">
                                         <path d="M9 15C9 12.1716 9 10.7574 9.87868 9.87868C10.7574 9 12.1716 9 15 9L16 9C18.8284 9 20.2426 9 21.1213 9.87868C22 10.7574 22 12.1716 22 15V16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H15C12.1716 22 10.7574 22 9.87868 21.1213C9 20.2426 9 18.8284 9 16L9 15Z" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
                                         <path d="M16.9999 9C16.9975 6.04291 16.9528 4.51121 16.092 3.46243C15.9258 3.25989 15.7401 3.07418 15.5376 2.90796C14.4312 2 12.7875 2 9.5 2C6.21252 2 4.56878 2 3.46243 2.90796C3.25989 3.07417 3.07418 3.25989 2.90796 3.46243C2 4.56878 2 6.21252 2 9.5C2 12.7875 2 14.4312 2.90796 15.5376C3.07417 15.7401 3.25989 15.9258 3.46243 16.092C4.51121 16.9528 6.04291 16.9975 9 16.9999" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -282,26 +283,24 @@ const handlechange= (e) => {
                             </td>
                             <td className="px-5 py-4">
                                 <div className="flex gap-2">
-                                    <button id="edit" className="action-button" onClick={() => editpass(item.id)}> {/* ADD THIS CLASS */}
+                                    <button id="edit" className="action-button" onClick={() => editpass(item.id)}> 
                                         <lord-icon
                                             src="https://cdn.lordicon.com/exymduqj.json"
                                             trigger="hover"
                                             state="hover-line"
                                             target="#edit"
                                             colors="primary:#3080e8,secondary:#3080e8"
-                                            className="h-6 w-6"
+                                            className="h-7 w-7"
                                         ></lord-icon>
-                                        <span>Edit</span> {/* Keep text label for desktop */}
                                     </button>
-                                    <button id="delete" className="action-button" onClick={() => deletepass(item.id)}> {/* ADD THIS CLASS */}
+                                    <button id="delete" className="action-button" onClick={() => deletepass(item.id)}>
                                         <lord-icon
-                                            className="h-6 w-6"
+                                            className="h-7 w-7"
                                             src="https://cdn.lordicon.com/jzinekkv.json"
                                             trigger="hover"
                                             stroke="bold"
                                             colors="primary:#e83a30,secondary:#e83a30"
                                         ></lord-icon>
-                                        <span>Delete</span> {/* Keep text label for desktop */}
                                     </button>
                                 </div>
                             </td>
@@ -317,21 +316,21 @@ const handlechange= (e) => {
     {passwordarray.map((item) => (
         <div key={item.id} className="password-card">
             <div className="password-card-header">
-                <span className="url-text-display">{item.site}</span> {/* ADD THIS CLASS */}
+                <span className="url-text-display">{item.site}</span> 
                 <a href={item.site} target="_blank" rel="noopener noreferrer">
                     <lord-icon
                         src="https://cdn.lordicon.com/gsjfryhc.json"
                         trigger="morph"
                         state="morph-link"
                         colors="primary:#ffffff,secondary:#16c72e"
-                        className="lord-icon-link" // Use custom class for mobile icon size
+                        className="lord-icon-link"
                     ></lord-icon>
                 </a>
             </div>
             <div className="password-card-item">
                 <span className="password-card-label">Username:</span>
                 <div className="password-card-value cursor-pointer" onClick={() => copyText(item.username)}>
-                    <span className="url-text-display">{item.username}</span> {/* ADD THIS CLASS */}
+                    <span className="url-text-display">{item.username}</span> 
                     <svg className="copy-svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#ffffff" fill="none">
                         <path d="M9 15C9 12.1716 9 10.7574 9.87868 9.87868C10.7574 9 12.1716 9 15 9L16 9C18.8284 9 20.2426 9 21.1213 9.87868C22 10.7574 22 12.1716 22 15V16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H15C12.1716 22 10.7574 22 9.87868 21.1213C9 20.2426 9 18.8284 9 16L9 15Z" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
                         <path d="M16.9999 9C16.9975 6.04291 16.9528 4.51121 16.092 3.46243C15.9258 3.25989 15.7401 3.07418 15.5376 2.90796C14.4312 2 12.7875 2 9.5 2C6.21252 2 4.56878 2 3.46243 2.90796C3.25989 3.07417 3.07418 3.25989 2.90796 3.46243C2 4.56878 2 6.21252 2 9.5C2 12.7875 2 14.4312 2.90796 15.5376C3.07417 15.7401 3.25989 15.9258 3.46243 16.092C4.51121 16.9528 6.04291 16.9975 9 16.9999" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -349,7 +348,7 @@ const handlechange= (e) => {
                 </div>
             </div>
             <div className="password-card-actions">
-                <button className="action-button" onClick={() => editpass(item.id)}> {/* ADD THIS CLASS */}
+                <button className="action-button" onClick={() => editpass(item.id)}> 
                     <lord-icon
                         src="https://cdn.lordicon.com/exymduqj.json"
                         trigger="hover"
@@ -358,7 +357,7 @@ const handlechange= (e) => {
                         className="h-6 w-6"
                     ></lord-icon>
                 </button>
-                <button className="action-button" onClick={() => deletepass(item.id)}> {/* ADD THIS CLASS */}
+                <button className="action-button" onClick={() => deletepass(item.id)}> 
                     <lord-icon
                         className="h-6 w-6"
                         src="https://cdn.lordicon.com/jzinekkv.json"
