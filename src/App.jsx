@@ -5,6 +5,8 @@ import Dashboard from './components/Dashboard.jsx';
 import Footer from './components/footer.jsx';
 import Contact from './components/contact.jsx';
 import Navbar from './components/navbar.jsx';
+import { Analytics } from '@vercel/analytics/react';
+
 
 const Rootlayout=()=>{
   return(
@@ -43,7 +45,8 @@ function App() {
   return (
    <>
     <RouterProvider router={router}/>
-    </>
+    <Analytics />
+   </>
 
    ) 
 }
