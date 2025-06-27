@@ -6,6 +6,7 @@ import Footer from './components/footer.jsx';
 import Contact from './components/contact.jsx';
 import Navbar from './components/navbar.jsx';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 
 const Rootlayout=()=>{
@@ -46,6 +47,7 @@ function App() {
    <>
     <RouterProvider router={router}/>
     <Analytics />
+    <SpeedInsights />
    </>
 
    ) 
